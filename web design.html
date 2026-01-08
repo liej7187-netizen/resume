@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FaizanAli | Professional Web Design Services</title>
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f0f4f8;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #005fa3;
+      text-decoration: underline;
+      outline: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0077cccc, #00c6ffcc), url('https://images.unsplash.com/photo-1502880195258-dfa99ca07d09?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      color: white;
+      padding: 5rem 1rem 4rem;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      margin-bottom: 3rem;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 7px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+    .hero button {
+      background: #00aaff;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 6px 15px rgba(0,170,255,0.6);
+      transition: background-color 0.3s ease;
+    }
+    .hero button:hover, .hero button:focus {
+      background: #0077cc;
+      outline: none;
+    }
+
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .service-icon {
+      font-size: 4rem;
+      color: #00aaff;
+      margin-bottom: 1rem;
+    }
+    .service-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #0077cc;
+    }
+    .service-desc {
+      color: #555;
+      font-size: 1rem;
+      min-height: 80px;
+    }
+
+    /* Portfolio Carousel */
+    .portfolio-section {
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-title {
+      text-align: center;
+      font-size: 2.6rem;
+      color: #0077cc;
+      margin-bottom: 2rem;
+      font-weight: 900;
+    }
+    .portfolio-carousel {
+      display: flex;
+      gap: 1.5rem;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+    .portfolio-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+    .portfolio-carousel::-webkit-scrollbar-thumb {
+      background: #0077cc;
+      border-radius: 4px;
+    }
+    .portfolio-item {
+      min-width: 300px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .portfolio-item img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .portfolio-info {
+      padding: 1rem 1.5rem;
+    }
+    .portfolio-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+      color: #0077cc;
+    }
+    .portfolio-info p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Process Section */
+    .process-section {
+      background: #e6f5ff;
+      padding: 4rem 1rem;
+      border-radius: 15px;
+      margin-bottom: 5rem;
+      box-shadow: inset 0 0 50px #d1e9ff;
+    }
+    .process-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #0077cc;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
+    .process-steps {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .step {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex: 1 1 200px;
+      max-width: 250px;
+      text-align: center;
+      position: relative;
+      transition: box-shadow 0.3s ease;
+    }
+    .step:hover {
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .step-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #00aaff;
+      margin-bottom: 1rem;
+    }
+    .step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0077cc;
+    }
+    .step-desc {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Pricing */
+    .pricing-section {
+      margin-bottom: 5rem;
+    }
+    .pricing-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #0077cc;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+    .pricing-cards {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .pricing-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      flex: 1 1 280px;
+      max-width: 320px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .plan-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #0077cc;
+      margin-bottom: 1rem;
+    }
+    .plan-price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #00aaff;
+      margin-bottom: 1.2rem;
+    }
+    .plan-desc {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .plan-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    .plan-features li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .plan-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00aaff;
+      font-weight: 700;
+    }
+    .plan-btn {
+      background: #00aaff;
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .plan-btn:hover, .plan-btn:focus {
+      background: #0077cc;
+      outline: none;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      margin-bottom: 5rem;
+      background: white;
+      padding: 3rem 1rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .testimonials-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #0077cc;
+      font-weight: 900;
+      margin-bottom: 2.5rem;
+    }
+    .testimonial {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      font-size: 1.1rem;
+      position: relative;
+      min-height: 120px;
+      padding: 0 1.5rem;
+      user-select: none;
+    }
+    .testimonial::before {
+      content: '“';
+      font-size: 4rem;
+      color: #00aaff;
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-weight: 900;
+    }
+    .testimonial::after {
+      content: '”';
+      font-size: 4rem;
+      color: #00aaff;
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+      font-weight: 900;
+    }
+    .testimonial-author {
+      margin-top: 1.5rem;
+      font-weight: 700;
+      color: #0077cc;
+    }
+    .testimonial-controls {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .testimonial-btn {
+      background: none;
+      border: 2px solid #0077cc;
+      color: #0077cc;
+      font-size: 1.4rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin: 0 0.7rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .testimonial-btn:hover, .testimonial-btn:focus {
+      background: #0077cc;
+      color: white;
+      outline: none;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #0077cc;
+      padding: 4rem 1rem;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+    .contact-section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+      outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      box-shadow: 0 0 8px 2px #00aaff;
+    }
+    .contact-form button {
+      padding: 1rem 2rem;
+      background: white;
+      color: #0077cc;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background: #005fa3;
+      color: white;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+      .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .pricing-card {
+        max-width: 90%;
+      }
+      .process-steps {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .portfolio-carousel {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero" role="banner" aria-label="Web Design Hero Section">
+    <div class="container">
+      <h1>Professional Web Design Services</h1>
+      <p>Creating stunning, responsive websites that engage your audience and grow your business.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="container services" aria-label="Web Design Services Overview">
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">🎨</div>
+      <h2 class="service-title">Custom Website Design</h2>
+      <p class="service-desc">Tailored website design to match your brand identity and business goals.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">⚡</div>
+      <h2 class="service-title">Responsive Design</h2>
+      <p class="service-desc">Optimized layouts that look perfect on any device – desktop, tablet, or mobile.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">🔧</div>
+      <h2 class="service-title">Website Maintenance</h2>
+      <p class="service-desc">Reliable updates, backups, and performance optimization to keep your site running smoothly.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">🚀</div>
+      <h2 class="service-title">SEO-Friendly Design</h2>
+      <p class="service-desc">Building sites that rank well in search engines and drive organic traffic.</p>
+    </article>
+  </section>
+
+  <!-- Portfolio Carousel -->
+  <section class="portfolio-section" aria-label="Portfolio Preview">
+    <h2 class="portfolio-title">Recent Web Design Projects</h2>
+    <div class="portfolio-carousel" tabindex="0" role="list">
+      <div class="portfolio-item" role="listitem" tabindex="-1">
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=600&q=80" alt="Portfolio project: corporate website design" />
+        <div class="portfolio-info">
+          <h3>Corporate Website</h3>
+          <p>Clean, professional design for a financial services company.</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem" tabindex="-1">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Portfolio project: e-commerce site design" />
+        <div class="portfolio-info">
+          <h3>E-commerce Site</h3>
+          <p>Modern shopping experience with smooth navigation and fast checkout.</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem" tabindex="-1">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80" alt="Portfolio project: creative agency website" />
+        <div class="portfolio-info">
+          <h3>Creative Agency</h3>
+          <p>Bold and colorful site with interactive animations and dynamic content.</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem" tabindex="-1">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Portfolio project: blog design" />
+        <div class="portfolio-info">
+          <h3>Blog Design</h3>
+          <p>Clean typography and user-friendly layout focused on content.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="container process-section" aria-label="Web Design Process">
+    <h2 class="process-title">Our Web Design Process</h2>
+    <div class="process-steps">
+      <div class="step" tabindex="0">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Discovery</h3>
+        <p class="step-desc">We gather requirements, understand your goals, and plan the project.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Design</h3>
+        <p class="step-desc">Wireframes and mockups are created for your review and feedback.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Development</h3>
+        <p class="step-desc">We build a responsive, SEO-friendly website using best practices.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Launch & Support</h3>
+        <p class="step-desc">Your website goes live with ongoing maintenance and improvements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="container pricing-section" aria-label="Web Design Pricing">
+    <h2 class="pricing-title">Pricing Plans</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card" tabindex="0">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$799</div>
+        <div class="plan-desc">Perfect for small businesses and portfolios.</div>
+        <ul class="plan-features">
+          <li>Up to 5 pages</li>
+          <li>Responsive design</li>
+          <li>Basic SEO setup</li>
+          <li>1 month support</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Choose Plan</a>
+      </div>
+      <div class="pricing-card" tabindex="0">
+        <div class="plan-name">Business</div>
+        <div class="plan-price">$1,499</div>
+        <div class="plan-desc">For growing businesses with more features.</div>
+        <ul class="plan-features">
+          <li>Up to 15 pages</li>
+          <li>Custom design</li>
+          <li>SEO optimization</li>
+          <li>3 months support</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Choose Plan</a>
+      </div>
+      <div class="pricing-card" tabindex="0">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">$2,999</div>
+        <div class="plan-desc">Full custom solution for complex projects.</div>
+        <ul class="plan-features">
+          <li>Unlimited pages</li>
+          <li>Advanced SEO & Analytics</li>
+          <li>E-commerce integration</li>
+          <li>6 months priority support</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Choose Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container testimonials-section" aria-label="Client Testimonials">
+    <h2 class="testimonials-title">What Our Clients Say</h2>
+    <div class="testimonial" id="testimonial-text" tabindex="0" aria-live="polite">
+      “FaizanAli transformed our website with a modern look and boosted our online presence. Highly recommend!”
+      <div class="testimonial-author">– Sarah K., CEO</div>
+    </div>
+    <div class="testimonial-controls" aria-label="Testimonial navigation">
+      <button class="testimonial-btn" aria-label="Previous testimonial" id="prev-testimonial">&#8592;</button>
+      <button class="testimonial-btn" aria-label="Next testimonial" id="next-testimonial">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact" aria-label="Contact Form Section">
+    <h2>Contact Us for Your Web Design Project</h2>
+    <p>Have questions or want a custom quote? Send us a message!</p>
+    <form class="contact-form" aria-live="polite" aria-describedby="form-desc" onsubmit="return handleSubmit(event)">
+      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+      <button type="submit">Send Message</button>
+      <div id="form-desc" role="alert" style="margin-top:1rem; color:#fff;"></div>
+    </form>
+  </section>
+
+  <script>
+    // Testimonials data
+    const testimonials = [
+      {text: "FaizanAli transformed our website with a modern look and boosted our online presence. Highly recommend!", author: "– Sarah K., CEO"},
+      {text: "Professional and reliable web design services. Our traffic and engagement increased dramatically.", author: "– Mark D., Startup Founder"},
+      {text: "Creative design and excellent communication throughout the project. Love the final result!", author: "– Emily R., Marketing Manager"}
+    ];
+    let currentTestimonial = 0;
+    const testimonialText = document.getElementById('testimonial-text');
+
+    function showTestimonial(index) {
+      const t = testimonials[index];
+      testimonialText.innerHTML = `"${t.text}"<div class="testimonial-author">${t.author}</div>`;
+      testimonialText.focus();
+    }
+    document.getElementById('prev-testimonial').addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+    document.getElementById('next-testimonial').addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+    showTestimonial(currentTestimonial);
+
+    // Contact form submission simulation
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const alertDiv = document.getElementById('form-desc');
+      alertDiv.style.color = '#fff';
+      alertDiv.textContent = 'Sending...';
+
+      // Simulate sending delay
+      setTimeout(() => {
+        alertDiv.textContent = 'Thank you! Your message has been sent.';
+        form.reset();
+      }, 1500);
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
