@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FaizanAli - Our Services</title>
+  <style>
+    /* Base & Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #2980b9cc, #6dd5facc), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      color: white;
+      padding: 5rem 1rem 4rem;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      margin-bottom: 3rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    /* Services Section */
+    .services-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .service-icon {
+      font-size: 3.5rem;
+      color: #2980b9;
+      margin-bottom: 1rem;
+    }
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #2980b9;
+    }
+    .service-desc {
+      font-size: 1rem;
+      color: #555;
+      min-height: 90px;
+    }
+
+    /* Detailed Services */
+    .detailed-services {
+      margin-bottom: 5rem;
+    }
+    .service-detail {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .service-detail:hover {
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .service-detail:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .service-detail img {
+      flex: 1 1 50%;
+      border-radius: 12px;
+      max-height: 300px;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .service-info {
+      flex: 1 1 50%;
+      padding: 1rem 2rem;
+    }
+    .service-info h3 {
+      font-size: 2rem;
+      color: #2980b9;
+      margin-bottom: 1rem;
+    }
+    .service-info p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .service-info ul {
+      list-style: disc inside;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Pricing Table */
+    .pricing {
+      margin-bottom: 5rem;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    tbody tr:hover {
+      background-color: #f0f8ff;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #2980b9;
+    }
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #27ae60;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+    }
+    .faq-section h2 {
+      font-size: 2.8rem;
+      color: #2980b9;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    .faq-item:hover {
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .faq-question {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      font-weight: 700;
+      position: relative;
+      font-size: 1.2rem;
+      background: #f9faff;
+      user-select: none;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      content: '-';
+      transform: translateY(-50%);
+    }
+    .faq-answer {
+      max-height: 0;
+      padding: 0 2rem;
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: white;
+    }
+    .faq-answer.active {
+      padding: 1rem 2rem 2rem;
+      max-height: 300px;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #2980b9;
+      color: white;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .cta-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+    .cta-section p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+    }
+    .cta-section button {
+      background: white;
+      color: #2980b9;
+      padding: 1rem 3rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .cta-section button:hover {
+      background: #1c5980;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .service-detail {
+        flex-direction: column !important;
+      }
+      .service-detail img,
+      .service-info {
+        flex: none;
+        width: 100%;
+        max-height: none;
+      }
+      .pricing table {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" role="banner">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>High-quality web and app development services tailored to your business needs.</p>
+    </div>
+  </section>
+
+  <section class="container services-overview" aria-label="Service overview">
+    <article class="service-card" tabindex="0" aria-labelledby="web-dev-title">
+      <div class="service-icon" aria-hidden="true">💻</div>
+      <h2 id="web-dev-title" class="service-title">Web Development</h2>
+      <p class="service-desc">Responsive, SEO-friendly websites with modern technologies and best practices.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-labelledby="mobile-dev-title">
+      <div class="service-icon" aria-hidden="true">📱</div>
+      <h2 id="mobile-dev-title" class="service-title">Mobile App Development</h2>
+      <p class="service-desc">Cross-platform mobile apps designed for performance and user engagement.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-labelledby="ui-ux-title">
+      <div class="service-icon" aria-hidden="true">🎨</div>
+      <h2 id="ui-ux-title" class="service-title">UI/UX Design</h2>
+      <p class="service-desc">User-centered design approach to create intuitive and beautiful interfaces.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-labelledby="seo-title">
+      <div class="service-icon" aria-hidden="true">🚀</div>
+      <h2 id="seo-title" class="service-title">SEO Optimization</h2>
+      <p class="service-desc">Boost your search engine rankings and organic traffic with proven SEO strategies.</p>
+    </article>
+  </section>
+
+  <section class="container detailed-services" aria-label="Detailed service descriptions">
+    <div class="service-detail" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1523475496153-3a290a13f41b?auto=format&fit=crop&w=800&q=80" alt="Web developer coding on laptop" />
+      <div class="service-info">
+        <h3>Web Development</h3>
+        <p>We build scalable, fast-loading, and secure websites using HTML5, CSS3, JavaScript, React, and Node.js. Your website will be fully responsive and optimized for SEO and accessibility.</p>
+        <ul>
+          <li>Custom responsive design</li>
+          <li>Content Management Systems (CMS)</li>
+          <li>E-commerce integration</li>
+          <li>API development & integration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-detail" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Mobile app design on phone" />
+      <div class="service-info">
+        <h3>Mobile App Development</h3>
+        <p>Develop native and cross-platform mobile applications tailored to your business goals. We focus on performance, smooth UX, and seamless backend integration.</p>
+        <ul>
+          <li>iOS & Android apps</li>
+          <li>React Native & Flutter</li>
+          <li>Push notifications & analytics</li>
+          <li>App Store deployment support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-detail" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Designer working on UI wireframes" />
+      <div class="service-info">
+        <h3>UI/UX Design</h3>
+        <p>Our team creates user-centered designs that engage and delight users. From wireframes to prototypes, we ensure every interface is intuitive and visually appealing.</p>
+        <ul>
+          <li>User research & persona creation</li>
+          <li>Wireframing & prototyping</li>
+          <li>Interaction & visual design</li>
+          <li>Usability testing & iteration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-detail" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="SEO analytics on computer screen" />
+      <div class="service-info">
+        <h3>SEO Optimization</h3>
+        <p>Improve your site’s visibility on search engines with advanced SEO techniques including on-page optimization, keyword research, and structured data implementation.</p>
+        <ul>
+          <li>Keyword & competitor analysis</li>
+          <li>Technical SEO audit</li>
+          <li>Content strategy & creation</li>
+          <li>Link building & local SEO</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pricing" aria-label="Service pricing">
+    <h2 style="text-align:center; color:#2980b9; margin-bottom:2rem;">Pricing Plans</h2>
+    <table role="table" aria-describedby="pricing-description">
+      <caption id="pricing-description" style="caption-side: bottom; text-align: center; margin-top: 0.5rem; font-style: italic;">
+        Choose the best plan that suits your project needs.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Service</th>
+          <th scope="col">Basic</th>
+          <th scope="col">Standard</th>
+          <th scope="col">Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Web Development</th>
+          <td><span class="price">$800</span></td>
+          <td><span class="price">$1,500</span></td>
+          <td><span class="price">$3,000</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Mobile App Development</th>
+          <td><span class="price">$1,000</span></td>
+          <td><span class="price">$2,000</span></td>
+          <td><span class="price">$4,000</span></td>
+        </tr>
+        <tr>
+          <th scope="row">UI/UX Design</th>
+          <td><span class="price">$500</span></td>
+          <td><span class="price">$1,000</span></td>
+          <td><span class="price">$1,800</span></td>
+        </tr>
+        <tr>
+          <th scope="row">SEO Optimization</th>
+          <td><span class="price">$400</span></td>
+          <td><span class="price">$900</span></td>
+          <td><span class="price">$1,500</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+        What is the typical project duration?
+      </button>
+      <div id="faq1" class="faq-answer" role="region" aria-labelledby="faq1-btn">
+        <p>Project duration varies by scope, but typically ranges from 4 to 12 weeks, including development, testing, and deployment.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+        Do you offer post-launch support?
+      </button>
+      <div id="faq2" class="faq-answer" role="region" aria-labelledby="faq2-btn">
+        <p>Yes, we provide maintenance and support plans tailored to your needs after project completion.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+        Can I request custom features?
+      </button>
+      <div id="faq3" class="faq-answer" role="region" aria-labelledby="faq3-btn">
+        <p>Absolutely! We work closely with clients to implement custom features that fit their unique business requirements.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
+        What technologies do you use?
+      </button>
+      <div id="faq4" class="faq-answer" role="region" aria-labelledby="faq4-btn">
+        <p>We use modern technologies such as React, Node.js, Flutter, React Native, and others depending on project needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" role="region" aria-label="Call to action">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Contact FaizanAli today to discuss your ideas and get a custom quote.</p>
+    <button onclick="window.location.href='/contact'">Get in Touch</button>
+  </section>
+
+  <script>
+    // FAQ toggle logic
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+        const answer = document.getElementById(button.getAttribute('aria-controls'));
+        answer.classList.toggle('active');
+        button.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
