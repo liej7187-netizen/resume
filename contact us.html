@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f4f7f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .contact-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #2c3e50;
+      font-size: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #e74c3c;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c0392b;
+    }
+
+    /* Responsive */
+    @media(max-width: 500px) {
+      .contact-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" novalidate>
+      <input type="text" name="name" placeholder="Your Name" required minlength="2" />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required minlength="10"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        alert('Please fill out the form correctly.');
+        return;
+      }
+
+      // Simulate sending form
+      alert('Thank you for contacting us! We will get back to you soon.');
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
