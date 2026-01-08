@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App Development Services</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f7f9fc;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(90deg, #2980b9cc, #6dd5facc), url('https://images.unsplash.com/photo-1523475496153-3be0e196d545?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .hero button {
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      background: #e74c3c;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .hero button:hover {
+      background: #c0392b;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .feature-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .feature-icon {
+      font-size: 3.5rem;
+      color: #2980b9;
+      margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .tech-stack h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .tech-icon {
+      font-size: 3rem;
+      color: #2980b9;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    .tech-icon:hover {
+      color: #e74c3c;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      margin-bottom: 5rem;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+    .plans {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .plan {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .plan:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .plan-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #2980b9;
+    }
+    .plan-price {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1.2rem;
+      color: #e74c3c;
+    }
+    .plan-details {
+      flex-grow: 1;
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .plan button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      background: #2980b9;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .plan button:hover {
+      background: #1c5980;
+    }
+
+    /* FAQ Section */
+    .faq {
+      max-width: 800px;
+      margin: 0 auto 6rem auto;
+    }
+    .faq h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+    .accordion-item {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .accordion-header {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      position: relative;
+      user-select: none;
+      background: #2980b9;
+      color: white;
+    }
+    .accordion-header::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion-header.active::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      padding: 0 1.5rem;
+      background: #f1f9ff;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #333;
+    }
+    .accordion-content.open {
+      padding: 1rem 1.5rem;
+      max-height: 400px;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #e74c3c;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta button {
+      background: white;
+      color: #e74c3c;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+    .cta button:hover {
+      background: #c0392b;
+      color: white;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .plans {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-item {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Custom App Development Tailored for You</h1>
+      <p>From concept to launch, we build high-quality mobile and web applications that scale with your business.</p>
+      <button>Request a Quote</button>
+    </div>
+  </section>
+
+  <section class="container features">
+    <div class="feature-item">
+      <div class="feature-icon">⚙️</div>
+      <div class="feature-title">Custom Solutions</div>
+      <div class="feature-desc">Tailored applications built to meet your unique business needs with cutting-edge technologies.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title">Cross-Platform Apps</div>
+      <div class="feature-desc">Develop apps that run smoothly on iOS, Android, and web platforms ensuring maximum reach.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🚀</div>
+      <div class="feature-title">Scalable Architecture</div>
+      <div class="feature-desc">Robust design allowing your app to grow seamlessly as your user base expands.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">Secure & Reliable</div>
+      <div class="feature-desc">Implementing best security practices to protect your data and users.</div>
+    </div>
+  </section>
+
+  <section class="container tech-stack">
+    <h2>Our Technology Stack</h2>
+    <div class="tech-icons" aria-label="Technology stack icons" role="list">
+      <span class="tech-icon" role="listitem" title="React Native">⚛️</span>
+      <span class="tech-icon" role="listitem" title="Flutter">🦋</span>
+      <span class="tech-icon" role="listitem" title="Swift">🍎</span>
+      <span class="tech-icon" role="listitem" title="Kotlin">🤖</span>
+      <span class="tech-icon" role="listitem" title="Node.js">🟢</span>
+      <span class="tech-icon" role="listitem" title="Firebase">🔥</span>
+    </div>
+  </section>
+
+  <section class="pricing container">
+    <h2>Pricing Plans</h2>
+    <div class="plans" role="list">
+      <div class="plan" role="listitem">
+        <div class="plan-title">Starter</div>
+        <div class="plan-price">$1500</div>
+        <div class="plan-details">
+          Basic app with essential features<br />
+          1 platform (iOS or Android)<br />
+          1-month support
+        </div>
+        <button>Choose Plan</button>
+      </div>
+      <div class="plan" role="listitem">
+        <div class="plan-title">Professional</div>
+        <div class="plan-price">$4000</div>
+        <div class="plan-details">
+          Multi-platform app (iOS & Android)<br />
+          Advanced features and APIs<br />
+          3 months support
+        </div>
+        <button>Choose Plan</button>
+      </div>
+      <div class="plan" role="listitem">
+        <div class="plan-title">Enterprise</div>
+        <div class="plan-price">Custom Pricing</div>
+        <div class="plan-details">
+          Fully customized app solution<br />
+          Dedicated team and support<br />
+          SLA & maintenance agreements
+        </div>
+        <button>Contact Us</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq container" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="accordion-item">
+      <div class="accordion-header" tabindex="0">How long does app development usually take?</div>
+      <div class="accordion-content">
+        The timeline depends on complexity, but typically ranges from 2 to 6 months for a full-featured app.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" tabindex="0">Do you support app publishing?</div>
+      <div class="accordion-content">
+        Yes! We assist with publishing your app on Apple App Store and Google Play Store.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" tabindex="0">Can you integrate third-party APIs?</div>
+      <div class="accordion-content">
+        Absolutely. We have experience integrating payment gateways, social logins, maps, and more.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" tabindex="0">What about post-launch support?</div>
+      <div class="accordion-content">
+        We offer maintenance packages to keep your app updated, secure, and bug-free.
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Build Your App?</h2>
+    <p>Contact us today to discuss your project and get a personalized quote tailored to your needs.</p>
+    <button onclick="alert('Thanks for reaching out! We will contact you shortly.')">Get a Quote</button>
+  </section>
+
+  <script>
+    // Accordion functionality
+    const headers = document.querySelectorAll('.accordion-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const openItem = document.querySelector('.accordion-header.active');
+        if (openItem && openItem !== header) {
+          openItem.classList.remove('active');
+          openItem.nextElementSibling.classList.remove('open');
+        }
+
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        content.classList.toggle('open');
+      });
+
+      // Keyboard accessibility
+      header.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
