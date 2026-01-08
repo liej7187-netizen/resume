@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FaizanAli | Expert SEO Services</title>
+<style>
+  /* Base Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #f8fafc;
+    color: #222;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a {
+    color: #1a73e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #174ea6;
+    text-decoration: underline;
+    outline: none;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a73e8cc, #4a90e2cc), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem 5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  }
+  .hero button {
+    background: #fff;
+    color: #1a73e8;
+    border: none;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255,255,255,0.6);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .hero button:hover, .hero button:focus {
+    background: #174ea6;
+    color: #fff;
+    outline: none;
+  }
+
+  /* SEO Services Grid */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.15);
+  }
+  .service-icon {
+    font-size: 4.5rem;
+    color: #1a73e8;
+    margin-bottom: 1rem;
+  }
+  .service-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #174ea6;
+  }
+  .service-desc {
+    color: #555;
+    font-size: 1rem;
+    min-height: 90px;
+  }
+
+  /* Case Studies Section */
+  .case-studies {
+    margin-bottom: 5rem;
+  }
+  .case-studies-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #174ea6;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+  }
+  .case-study-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .case-study {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    flex: 1 1 320px;
+    max-width: 320px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .case-study:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+  .case-study img {
+    border-bottom: 3px solid #1a73e8;
+  }
+  .case-study-content {
+    padding: 1.5rem;
+  }
+  .case-study-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1a73e8;
+    margin-bottom: 0.6rem;
+  }
+  .case-study-desc {
+    font-size: 1rem;
+    color: #444;
+    min-height: 70px;
+  }
+
+  /* SEO Process Section */
+  .process-section {
+    background: #e8f0fe;
+    padding: 4rem 1rem;
+    border-radius: 15px;
+    margin-bottom: 5rem;
+    box-shadow: inset 0 0 50px #c6dafc;
+  }
+  .process-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #174ea6;
+    font-weight: 900;
+    margin-bottom: 3rem;
+  }
+  .process-steps {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .step {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    flex: 1 1 240px;
+    max-width: 280px;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+  }
+  .step:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+  }
+  .step-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #1a73e8;
+    margin-bottom: 1rem;
+  }
+  .step-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #174ea6;
+  }
+  .step-desc {
+    color: #555;
+    font-size: 1rem;
+  }
+
+  /* Pricing */
+  .pricing-section {
+    margin-bottom: 5rem;
+  }
+  .pricing-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #174ea6;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+  }
+  .pricing-cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pricing-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    flex: 1 1 280px;
+    max-width: 320px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: default;
+  }
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+  }
+  .plan-name {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #1a73e8;
+    margin-bottom: 1rem;
+  }
+  .plan-price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #4a90e2;
+    margin-bottom: 1.5rem;
+  }
+  .plan-desc {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+  }
+  .plan-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  .plan-features li {
+    margin-bottom: 0.9rem;
+    position: relative;
+    font-size: 1rem;
+    color: #333;
+  }
+  .plan-features li::before {
+    content: '✔';
+    position: absolute;
+    left: -1.2rem;
+    color: #1a73e8;
+    font-weight: 700;
+  }
+  .plan-btn {
+    background: #1a73e8;
+    border: none;
+    color: white;
+    padding: 1.1rem 2.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  .plan-btn:hover, .plan-btn:focus {
+    background: #174ea6;
+    outline: none;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    margin-bottom: 5rem;
+    background: white;
+    padding: 3rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  .testimonials-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #174ea6;
+    font-weight: 900;
+    margin-bottom: 3rem;
+  }
+  .testimonial {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    font-size: 1.2rem;
+    position: relative;
+    min-height: 130px;
+    padding: 0 1.5rem;
+    user-select: none;
+  }
+  .testimonial::before {
+    content: '“';
+    font-size: 4.5rem;
+    color: #1a73e8;
+    position: absolute;
+    top: -25px;
+    left: 15px;
+    font-weight: 900;
+  }
+  .testimonial::after {
+    content: '”';
+    font-size: 4.5rem;
+    color: #1a73e8;
+    position: absolute;
+    bottom: -25px;
+    right: 15px;
+    font-weight: 900;
+  }
+  .testimonial-author {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: #174ea6;
+  }
+  .testimonial-controls {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  .testimonial-btn {
+    background: none;
+    border: 2px solid #174ea6;
+    color: #174ea6;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .testimonial-btn:hover, .testimonial-btn:focus {
+    background: #174ea6;
+    color: white;
+    outline: none;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    background: #174ea6;
+    padding: 4rem 1rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+  }
+  .contact-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+  }
+  .contact-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-form {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.1rem;
+    resize: vertical;
+    outline: none;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    box-shadow: 0 0 10px 2px #4a90e2;
+  }
+  .contact-form button {
+    padding: 1.3rem 2.5rem;
+    background: white;
+    color: #174ea6;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+  }
+  .contact-form button:hover,
+  .contact-form button:focus {
+    background: #0f3d91;
+    color: white;
+    outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 840px) {
+    .services {
+      grid-template-columns: 1fr;
+    }
+    .case-study-list {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .pricing-card {
+      max-width: 90%;
+    }
+    .process-steps {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero" role="banner" aria-label="SEO Services Hero Section">
+    <div class="container">
+      <h1>Expert SEO Services to Grow Your Business</h1>
+      <p>Boost your website rankings, increase organic traffic, and maximize conversions with our proven SEO strategies.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Your Free SEO Audit</button>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="container services" aria-label="SEO Service Offerings">
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">🔍</div>
+      <h2 class="service-title">Keyword Research</h2>
+      <p class="service-desc">In-depth analysis to target the best keywords for your niche and audience.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">⚙️</div>
+      <h2 class="service-title">On-Page SEO</h2>
+      <p class="service-desc">Optimization of website structure, meta tags, content, and images for better rankings.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">🌐</div>
+      <h2 class="service-title">Technical SEO</h2>
+      <p class="service-desc">Improving site speed, mobile usability, indexing, and crawlability for search engines.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">📈</div>
+      <h2 class="service-title">Link Building</h2>
+      <p class="service-desc">Quality backlinks to boost domain authority and organic visibility.</p>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon" aria-hidden="true">📊</div>
+      <h2 class="service-title">Analytics & Reporting</h2>
+      <p class="service-desc">Regular reports to track SEO performance and insights for continuous improvement.</p>
+    </article>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="container case-studies" aria-label="SEO Case Studies">
+    <h2 class="case-studies-title">Successful SEO Campaigns</h2>
+    <div class="case-study-list">
+      <article class="case-study" tabindex="0" role="article" aria-label="Case study: E-commerce growth">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Graph showing e-commerce growth"/>
+        <div class="case-study-content">
+          <h3 class="case-study-title">E-commerce Growth</h3>
+          <p class="case-study-desc">Increased organic traffic by 120% and boosted sales by 75% in 6 months.</p>
+        </div>
+      </article>
+      <article class="case-study" tabindex="0" role="article" aria-label="Case study: Local business SEO">
+        <img src="https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=600&q=80" alt="Small business storefront with customers"/>
+        <div class="case-study-content">
+          <h3 class="case-study-title">Local Business SEO</h3>
+          <p class="case-study-desc">Achieved top 3 local rankings and tripled website visits in 4 months.</p>
+        </div>
+      </article>
+      <article class="case-study" tabindex="0" role="article" aria-label="Case study: SaaS platform ranking">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Person analyzing SaaS platform analytics"/>
+        <div class="case-study-content">
+          <h3 class="case-study-title">SaaS Platform Ranking</h3>
+          <p class="case-study-desc">Improved organic sign-ups by 60% and reduced bounce rate significantly.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SEO Process -->
+  <section class="container process-section" aria-label="Our SEO Process">
+    <h2 class="process-title">Our Proven SEO Process</h2>
+    <div class="process-steps">
+      <div class="step" tabindex="0" role="region" aria-label="Step 1: SEO Audit">
+        <div class="step-number">1</div>
+        <h3 class="step-title">SEO Audit</h3>
+        <p class="step-desc">Comprehensive website analysis to identify opportunities and issues.</p>
+      </div>
+      <div class="step" tabindex="0" role="region" aria-label="Step 2: Strategy Development">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Strategy Development</h3>
+        <p class="step-desc">Custom SEO plan based on your goals, competitors, and industry.</p>
+      </div>
+      <div class="step" tabindex="0" role="region" aria-label="Step 3: Implementation">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Implementation</h3>
+        <p class="step-desc">On-page, technical, and off-page SEO execution by our experts.</p>
+      </div>
+      <div class="step" tabindex="0" role="region" aria-label="Step 4: Monitoring & Reporting">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Monitoring & Reporting</h3>
+        <p class="step-desc">Tracking rankings, traffic, and conversions with regular updates.</p>
+      </div>
+      <div class="step" tabindex="0" role="region" aria-label="Step 5: Continuous Optimization">
+        <div class="step-number">5</div>
+        <h3 class="step-title">Continuous Optimization</h3>
+        <p class="step-desc">Adapting strategies based on data and search engine updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="container pricing-section" aria-label="SEO Pricing Plans">
+    <h2 class="pricing-title">Choose Your SEO Package</h2>
+    <div class="pricing-cards">
+      <article class="pricing-card" tabindex="0" role="region" aria-label="Basic SEO Package">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price">$499 / month</div>
+        <div class="plan-desc">Ideal for startups and small businesses.</div>
+        <ul class="plan-features">
+          <li>Keyword research & analysis</li>
+          <li>On-page optimization</li>
+          <li>Monthly reports</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Get Started</a>
+      </article>
+      <article class="pricing-card" tabindex="0" role="region" aria-label="Standard SEO Package">
+        <div class="plan-name">Standard</div>
+        <div class="plan-price">$999 / month</div>
+        <div class="plan-desc">For growing businesses looking to increase traffic.</div>
+        <ul class="plan-features">
+          <li>Everything in Basic</li>
+          <li>Technical SEO fixes</li>
+          <li>Link building</li>
+          <li>Phone & email support</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Get Started</a>
+      </article>
+      <article class="pricing-card" tabindex="0" role="region" aria-label="Premium SEO Package">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">$1,799 / month</div>
+        <div class="plan-desc">Comprehensive SEO for competitive industries.</div>
+        <ul class="plan-features">
+          <li>Everything in Standard</li>
+          <li>Advanced link building</li>
+          <li>Content marketing</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="#contact" class="plan-btn" tabindex="0">Get Started</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container testimonials-section" aria-label="Client Testimonials">
+    <h2 class="testimonials-title">Client Success Stories</h2>
+    <div class="testimonial" id="testimonial-text" tabindex="0" aria-live="polite">
+      “FaizanAli helped our site reach #1 in Google for key terms, leading to a 3x increase in leads!”
+      <div class="testimonial-author">– James W., Business Owner</div>
+    </div>
+    <div class="testimonial-controls" aria-label="Testimonial navigation">
+      <button class="testimonial-btn" aria-label="Previous testimonial" id="prev-testimonial">&#8592;</button>
+      <button class="testimonial-btn" aria-label="Next testimonial" id="next-testimonial">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact" aria-label="Contact Form Section">
+    <h2>Contact Us for a Free SEO Consultation</h2>
+    <p>Have questions or want a personalized SEO plan? Reach out now!</p>
+    <form class="contact-form" aria-live="polite" aria-describedby="form-desc" onsubmit="return handleSubmit(event)" novalidate>
+      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+      <button type="submit">Send Message</button>
+      <div id="form-desc" role="alert" style="margin-top:1rem; color:#fff;"></div>
+    </form>
+  </section>
+
+<script>
+  // Testimonials data
+  const testimonials = [
+    {
+      text: "FaizanAli helped our site reach #1 in Google for key terms, leading to a 3x increase in leads!",
+      author: "– James W., Business Owner"
+    },
+    {
+      text: "The SEO strategy and execution were spot on. Traffic and conversions soared.",
+      author: "– Maria L., Marketing Director"
+    },
+    {
+      text: "Highly professional team delivering real SEO results that matter.",
+      author: "– Ahmed S., Entrepreneur"
+    }
+  ];
+  let currentTestimonial = 0;
+  const testimonialText = document.getElementById('testimonial-text');
+
+  function showTestimonial(index) {
+    const t = testimonials[index];
+    testimonialText.innerHTML = `"${t.text}"<div class="testimonial-author">${t.author}</div>`;
+    testimonialText.focus();
+  }
+  document.getElementById('prev-testimonial').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonial);
+  });
+  document.getElementById('next-testimonial').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+  });
+  showTestimonial(currentTestimonial);
+
+  // Contact form submission simulation
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const alertDiv = document.getElementById('form-desc');
+    alertDiv.style.color = '#fff';
+    alertDiv.textContent = 'Sending...';
+
+    // Simple validation
+    if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+      alertDiv.textContent = 'Please fill in all fields.';
+      alertDiv.style.color = '#ff5555';
+      return false;
+    }
+
+    // Simulate sending delay
+    setTimeout(() => {
+      alertDiv.textContent = 'Thank you! Your message has been sent.';
+      form.reset();
+    }, 1500);
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
